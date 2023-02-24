@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2.3.3.1. pynrand.discrete.nonnegative.CustomSampler &mdash; pynrand  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/readthedocs-custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2.3.3.2. pynrand.discrete.nonnegative.UniformSampler" href="pynrand.discrete.nonnegative.UniformSampler.html" />
+    <link rel="prev" title="2.3.3. pynrand.discrete.nonnegative" href="pynrand.discrete.nonnegative.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> pynrand
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../INSTALL.html">1. Installation instructions</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="pynrand.html">2. Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="pynrand.show_config.html">2.1. pynrand.show_config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pynrand.continuous.html">2.2. pynrand.continuous</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="pynrand.discrete.html">2.3. pynrand.discrete</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="pynrand.discrete.CustomSampler.html">2.3.1. pynrand.discrete.CustomSampler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pynrand.discrete.UniformSampler.html">2.3.2. pynrand.discrete.UniformSampler</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="pynrand.discrete.nonnegative.html">2.3.3. pynrand.discrete.nonnegative</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">2.3.3.1. pynrand.discrete.nonnegative.CustomSampler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynrand.discrete.nonnegative.UniformSampler.html">2.3.3.2. pynrand.discrete.nonnegative.UniformSampler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynrand.discrete.nonnegative.integer.html">2.3.3.3. pynrand.discrete.nonnegative.integer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pynrand.version.html">2.4. pynrand.version</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">3. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../literature.html">4. Literature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../todo.html">5. To-Do list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">6. CHANGELOG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">7. License</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pynrand</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="pynrand.html"><span class="section-number">2. </span>pynrand</a></li>
+          <li class="breadcrumb-item"><a href="pynrand.discrete.html"><span class="section-number">2.3. </span>pynrand.discrete</a></li>
+          <li class="breadcrumb-item"><a href="pynrand.discrete.nonnegative.html"><span class="section-number">2.3.3. </span>pynrand.discrete.nonnegative</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">2.3.3.1. </span>pynrand.discrete.nonnegative.CustomSampler</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="pynrand-discrete-nonnegative-customsampler">
+<h1><span class="section-number">2.3.3.1. </span>pynrand.discrete.nonnegative.CustomSampler<a class="headerlink" href="#pynrand-discrete-nonnegative-customsampler" title="Permalink to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="pynrand.discrete.nonnegative.CustomSampler">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CustomSampler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sample_space</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">1)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pynrand/discrete/nonnegative.html#CustomSampler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pynrand.discrete.nonnegative.CustomSampler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">CustomSampler</span></code></p>
+<p>Insert description here.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>sample_space</strong><span class="classifier"><cite>array_like</cite> (<cite>float</cite>, ndim=1), optional</span></dt><dd><p>Insert description here.</p>
+</dd>
+<dt><strong>weights</strong><span class="classifier"><cite>array_like</cite> (<cite>float</cite>, ndim=1) | <cite>None</cite>, optional</span></dt><dd><p>Insert description here.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Attributes</dt>
+<dd class="field-even"><dl>
+<dt><strong>core_attrs</strong><span class="classifier"><cite>dict</cite>, read-only</span></dt><dd><p>A <cite>dict</cite> representation of the core attributes: each <cite>dict</cite> key is a
+<cite>str</cite> representing the name of a core attribute, and the corresponding
+<cite>dict</cite> value is the object to which said core attribute is set. The core
+attributes are the same as the construction parameters, except that 
+their values might have been updated since construction.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pynrand.discrete.nonnegative.CustomSampler.de_pre_serialize" title="pynrand.discrete.nonnegative.CustomSampler.de_pre_serialize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">de_pre_serialize</span></code></a>(serializable_rep)</p></td>
+<td><p>Construct an instance from a serializable representation.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pynrand.discrete.nonnegative.CustomSampler.draw" title="pynrand.discrete.nonnegative.CustomSampler.draw"><code class="xref py py-obj docutils literal notranslate"><span class="pre">draw</span></code></a>([output_shape])</p></td>
+<td><p>Insert description here.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pynrand.discrete.nonnegative.CustomSampler.dump" title="pynrand.discrete.nonnegative.CustomSampler.dump"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dump</span></code></a>(filename[, overwrite])</p></td>
+<td><p>Serialize instance and save the result in a JSON file.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pynrand.discrete.nonnegative.CustomSampler.dumps" title="pynrand.discrete.nonnegative.CustomSampler.dumps"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dumps</span></code></a>()</p></td>
+<td><p>Serialize instance.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pynrand.discrete.nonnegative.CustomSampler.load" title="pynrand.discrete.nonnegative.CustomSampler.load"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load</span></code></a>(filename)</p></td>
+<td><p>Construct an instance from a serialized representation that is  stored in a JSON file.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pynrand.discrete.nonnegative.CustomSampler.loads" title="pynrand.discrete.nonnegative.CustomSampler.loads"><code class="xref py py-obj docutils literal notranslate"><span class="pre">loads</span></code></a>(serialized_rep)</p></td>
+<td><p>Construct an instance from a serialized representation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pynrand.discrete.nonnegative.CustomSampler.pre_serialize" title="pynrand.discrete.nonnegative.CustomSampler.pre_serialize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pre_serialize</span></code></a>()</p></td>
+<td><p>Pre-serialize instance.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pynrand.discrete.nonnegative.CustomSampler.update" title="pynrand.discrete.nonnegative.CustomSampler.update"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update</span></code></a>(core_attr_subset)</p></td>
+<td><p>Update a subset of the core attributes.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pynrand.discrete.nonnegative.CustomSampler.de_pre_serialize" title="pynrand.discrete.nonnegative.CustomSampler.de_pre_serialize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">de_pre_serialize</span></code></a></p></td>
+<td><p>Construct an instance from a serializable representation.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pynrand.discrete.nonnegative.CustomSampler.draw" title="pynrand.discrete.nonnegative.CustomSampler.draw"><code class="xref py py-obj docutils literal notranslate"><span class="pre">draw</span></code></a></p></td>
+<td><p>Insert description here.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pynrand.discrete.nonnegative.CustomSampler.dump" title="pynrand.discrete.nonnegative.CustomSampler.dump"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dump</span></code></a></p></td>
+<td><p>Serialize instance and save the result in a JSON file.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pynrand.discrete.nonnegative.CustomSampler.dumps" title="pynrand.discrete.nonnegative.CustomSampler.dumps"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dumps</span></code></a></p></td>
+<td><p>Serialize instance.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pynrand.discrete.nonnegative.CustomSampler.load" title="pynrand.discrete.nonnegative.CustomSampler.load"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load</span></code></a></p></td>
+<td><p>Construct an instance from a serialized representation that is  stored in a JSON file.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pynrand.discrete.nonnegative.CustomSampler.loads" title="pynrand.discrete.nonnegative.CustomSampler.loads"><code class="xref py py-obj docutils literal notranslate"><span class="pre">loads</span></code></a></p></td>
+<td><p>Construct an instance from a serialized representation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pynrand.discrete.nonnegative.CustomSampler.pre_serialize" title="pynrand.discrete.nonnegative.CustomSampler.pre_serialize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pre_serialize</span></code></a></p></td>
+<td><p>Pre-serialize instance.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pynrand.discrete.nonnegative.CustomSampler.update" title="pynrand.discrete.nonnegative.CustomSampler.update"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update</span></code></a></p></td>
+<td><p>Update a subset of the core attributes.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">core_attrs</span></code></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="pynrand.discrete.nonnegative.CustomSampler.de_pre_serialize">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">de_pre_serialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">serializable_rep</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pynrand.discrete.nonnegative.CustomSampler.de_pre_serialize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct an instance from a serializable representation.</p>
+<p>We define pre-serialization as the process of converting an object into
+a form that can be subsequently serialized into a JSON format. We refer
+to objects resulting from pre-serialization as serializable objects.</p>
+<p>We define de-pre-serialization as the process of converting a
+serializable object into its original type, i.e. de-pre-serialization is
+the reverse process of pre-serialization.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>serializable_rep</strong><span class="classifier"><cite>dict</cite></span></dt><dd><p>A serializable representation of an instance. Serializable
+representations can be generated using the instance method 
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">fancytypes.PreSerializable.pre_serialize()</span></code>.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>pre_serializable_obj</strong><span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">fancytypes.PreSerializable</span></code></span></dt><dd><p>An instance constructed from the serializable representation
+<code class="docutils literal notranslate"><span class="pre">serializable_rep</span></code>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pynrand.discrete.nonnegative.CustomSampler.draw">
+<span class="sig-name descname"><span class="pre">draw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pynrand.discrete.nonnegative.CustomSampler.draw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Insert description here.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>output_shape</strong><span class="classifier"><cite>array_like</cite> (<cite>int</cite>, ndim=1) | <cite>None</cite>, optional</span></dt><dd><p>Insert description here.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>sample</strong><span class="classifier"><cite>int</cite> | <cite>float</cite> | <cite>array_like</cite> (<cite>int</cite>) | <cite>array_like</cite> (<cite>float</cite>)</span></dt><dd><p>Insert description here.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pynrand.discrete.nonnegative.CustomSampler.dump">
+<span class="sig-name descname"><span class="pre">dump</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pynrand.discrete.nonnegative.CustomSampler.dump" title="Permalink to this definition">¶</a></dt>
+<dd><p>Serialize instance and save the result in a JSON file.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>filename</strong><span class="classifier"><cite>str</cite></span></dt><dd><p>The relative or absolute path to the JSON file in which to store the
+serialized representation of an instance.</p>
+</dd>
+<dt><strong>overwrite</strong><span class="classifier"><cite>bool</cite>, optional</span></dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">overwrite</span></code> is set to <code class="docutils literal notranslate"><span class="pre">False</span></code> and a file exists at the path
+<code class="docutils literal notranslate"><span class="pre">filename</span></code>, then the serialized instance is not written to that
+file and an exception is raised. Otherwise, the serialized instance
+will be written to that file barring no other issues occur.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"></dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pynrand.discrete.nonnegative.CustomSampler.dumps">
+<span class="sig-name descname"><span class="pre">dumps</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pynrand.discrete.nonnegative.CustomSampler.dumps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Serialize instance.</p>
+<dl class="field-list">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl>
+<dt><strong>serialized_rep</strong><span class="classifier"><cite>dict</cite></span></dt><dd><p>A serialized representation of an instance.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pynrand.discrete.nonnegative.CustomSampler.load">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pynrand.discrete.nonnegative.CustomSampler.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct an instance from a serialized representation that is 
+stored in a JSON file.</p>
+<p>Users can save serialized representations to JSON files using the method
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">fancytypes.PreSerializable.dump()</span></code>.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>filename</strong><span class="classifier"><cite>str</cite></span></dt><dd><p>The relative or absolute path to the JSON file that is storing the
+serialized representation of an instance.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>pre_serializable_obj</strong><span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">fancytypes.PreSerializable</span></code></span></dt><dd><p>An instance constructed from the serialized representation
+stored in the JSON file.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pynrand.discrete.nonnegative.CustomSampler.loads">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">loads</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">serialized_rep</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pynrand.discrete.nonnegative.CustomSampler.loads" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct an instance from a serialized representation.</p>
+<p>Users can generate serialized representations using the method
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">fancytypes.PreSerializable.dumps()</span></code>.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>serialized_rep</strong><span class="classifier"><cite>str</cite> | <cite>bytes</cite> | <cite>bytearray</cite></span></dt><dd><p>The serialized representation.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>pre_serializable_obj</strong><span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">fancytypes.PreSerializable</span></code></span></dt><dd><p>An instance constructed from the serialized representation.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pynrand.discrete.nonnegative.CustomSampler.pre_serialize">
+<span class="sig-name descname"><span class="pre">pre_serialize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pynrand.discrete.nonnegative.CustomSampler.pre_serialize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pre-serialize instance.</p>
+<p>We define pre-serialization as the process of converting an object into
+a form that can be subsequently serialized into a JSON format. We refer
+to objects resulting from pre-serialization as serializable objects.</p>
+<p>We define de-pre-serialization as the process of converting a
+serializable object into its original type, i.e. de-pre-serialization is
+the reverse process of pre-serialization.</p>
+<dl class="field-list">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl>
+<dt><strong>serializable_rep</strong><span class="classifier"><cite>dict</cite></span></dt><dd><p>A serializable representation of an instance.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pynrand.discrete.nonnegative.CustomSampler.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">core_attr_subset</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pynrand/_discrete/base.html#CustomSampler.update"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pynrand.discrete.nonnegative.CustomSampler.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update a subset of the core attributes.</p>
+<p>Upon updating the subset of core attributes, the validation and
+conversion functions specified in the private class attribute
+<code class="docutils literal notranslate"><span class="pre">_validation_and_conversion_funcs</span></code> are applied. See the preamble of
+the documentation for the class
+<code class="xref py py-class docutils literal notranslate"><span class="pre">fancytypes.PreSerializableAndUpdatable</span></code> for a discussion on the
+validation and conversion functions.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>core_attr_subset</strong><span class="classifier"><cite>dict</cite></span></dt><dd><p>A <cite>dict</cite> specifying how to update a subset of the core attributes:
+each <cite>dict</cite> key of <code class="docutils literal notranslate"><span class="pre">core_attr_subset</span></code> that is also a key of the
+instance attribute
+<code class="xref py py-attr docutils literal notranslate"><span class="pre">fancytypes.PreSerializableAndUpdatable.core_attrs</span></code> is a <cite>str</cite>
+representing the name of a core attribute, and the corresponding
+<cite>dict</cite> value is the object to which said core attribute is to be
+set. Any <cite>dict</cite> keys of <code class="docutils literal notranslate"><span class="pre">core_attr_subset</span></code> that are not keys of
+the instance attribute
+<code class="xref py py-attr docutils literal notranslate"><span class="pre">fancytypes.PreSerializableAndUpdatable.core_attrs</span></code> are
+ignored in the update procedure along with the corresponding <cite>dict</cite>
+values.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="pynrand.discrete.nonnegative.html" class="btn btn-neutral float-left" title="2.3.3. pynrand.discrete.nonnegative" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="pynrand.discrete.nonnegative.UniformSampler.html" class="btn btn-neutral float-right" title="2.3.3.2. pynrand.discrete.nonnegative.UniformSampler" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Matthew Fitzpatrick.
+      <span class="lastupdated">Last updated on Feb 23, 2023.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

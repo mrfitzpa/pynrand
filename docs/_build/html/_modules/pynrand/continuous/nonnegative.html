@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pynrand.continuous.nonnegative &mdash; pynrand  documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/readthedocs-custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> pynrand
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../INSTALL.html">1. Installation instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../_autosummary/pynrand.html">2. Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples.html">3. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../literature.html">4. Literature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../todo.html">5. To-Do list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../changelog.html">6. CHANGELOG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../license.html">7. License</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">pynrand</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+          <li class="breadcrumb-item"><a href="../../pynrand.html">pynrand</a></li>
+          <li class="breadcrumb-item"><a href="../continuous.html">pynrand.continuous</a></li>
+      <li class="breadcrumb-item active">pynrand.continuous.nonnegative</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for pynrand.continuous.nonnegative</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Insert a one-line description of module.</span>
+
+<span class="sd">A more detailed description of the module. The more detailed description can</span>
+<span class="sd">span multiple lines.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+
+<span class="c1">#####################################</span>
+<span class="c1">## Load libraries/packages/modules ##</span>
+<span class="c1">#####################################</span>
+
+<span class="c1"># For generating random numbers.</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># For converting objects.</span>
+<span class="kn">import</span> <span class="nn">czekitout.convert</span>
+
+
+
+<span class="c1"># For defining classes derived from the class :class:`pynrand._base.Sampler`.</span>
+<span class="kn">import</span> <span class="nn">pynrand._base</span>
+
+<span class="c1"># For defining classes derived from the class</span>
+<span class="c1"># :class:`pynrand._continuous.base.UniformSampler`.</span>
+<span class="kn">import</span> <span class="nn">pynrand._continuous.base</span>
+
+
+
+<span class="c1">############################</span>
+<span class="c1">## Authorship information ##</span>
+<span class="c1">############################</span>
+
+<span class="n">__author__</span>     <span class="o">=</span> <span class="s2">&quot;Matthew Fitzpatrick&quot;</span>
+<span class="n">__copyright__</span>  <span class="o">=</span> <span class="s2">&quot;Copyright 2023&quot;</span>
+<span class="n">__credits__</span>    <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Matthew Fitzpatrick&quot;</span><span class="p">]</span>
+<span class="n">__maintainer__</span> <span class="o">=</span> <span class="s2">&quot;Matthew Fitzpatrick&quot;</span>
+<span class="n">__email__</span>      <span class="o">=</span> <span class="s2">&quot;mrfitzpa@uvic.ca&quot;</span>
+<span class="n">__status__</span>     <span class="o">=</span> <span class="s2">&quot;Development&quot;</span>
+
+
+
+<span class="c1">##################################</span>
+<span class="c1">## Define classes and functions ##</span>
+<span class="c1">##################################</span>
+
+<span class="c1"># List of public objects in module.</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;UniformSampler&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;GammaSampler&quot;</span><span class="p">]</span>
+
+
+
+<span class="k">def</span> <span class="nf">_check_and_convert_lower_limit</span><span class="p">(</span><span class="n">ctor_params</span><span class="p">):</span>
+    <span class="n">obj_name</span> <span class="o">=</span> <span class="s2">&quot;lower_limit&quot;</span>
+    <span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;obj&quot;</span><span class="p">:</span> <span class="n">ctor_params</span><span class="p">[</span><span class="n">obj_name</span><span class="p">],</span> <span class="s2">&quot;obj_name&quot;</span><span class="p">:</span> <span class="n">obj_name</span><span class="p">}</span>
+    <span class="n">lower_limit</span> <span class="o">=</span> <span class="n">czekitout</span><span class="o">.</span><span class="n">convert</span><span class="o">.</span><span class="n">to_nonnegative_float</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">lower_limit</span>
+
+
+
+<span class="k">def</span> <span class="nf">_check_and_convert_upper_limit</span><span class="p">(</span><span class="n">ctor_params</span><span class="p">):</span>
+    <span class="n">upper_limit</span> <span class="o">=</span> \
+        <span class="n">pynrand</span><span class="o">.</span><span class="n">_continuous</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">_check_and_convert_upper_limit</span><span class="p">(</span><span class="n">ctor_params</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">upper_limit</span>
+
+
+
+<div class="viewcode-block" id="UniformSampler"><a class="viewcode-back" href="../../../_autosummary/pynrand.continuous.nonnegative.UniformSampler.html#pynrand.continuous.nonnegative.UniformSampler">[docs]</a><span class="k">class</span> <span class="nc">UniformSampler</span><span class="p">(</span><span class="n">pynrand</span><span class="o">.</span><span class="n">_continuous</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">UniformSampler</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;Insert description here.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    lower_limit : `float`, optional</span>
+<span class="sd">        Insert description here.</span>
+<span class="sd">    upper_limit : `float`, optional</span>
+<span class="sd">        Insert description here.</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    core_attrs : `dict`, read-only</span>
+<span class="sd">        A `dict` representation of the core attributes: each `dict` key is a</span>
+<span class="sd">        `str` representing the name of a core attribute, and the corresponding</span>
+<span class="sd">        `dict` value is the object to which said core attribute is set. The core</span>
+<span class="sd">        attributes are the same as the construction parameters, except that </span>
+<span class="sd">        their values might have been updated since construction.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">_validation_and_conversion_funcs</span> <span class="o">=</span> \
+        <span class="p">{</span><span class="s2">&quot;lower_limit&quot;</span><span class="p">:</span> <span class="n">_check_and_convert_lower_limit</span><span class="p">,</span>
+         <span class="s2">&quot;upper_limit&quot;</span><span class="p">:</span> <span class="n">_check_and_convert_upper_limit</span><span class="p">}</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lower_limit</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">upper_limit</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">ctor_params</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;lower_limit&quot;</span><span class="p">:</span> <span class="n">lower_limit</span><span class="p">,</span> <span class="s2">&quot;upper_limit&quot;</span><span class="p">:</span> <span class="n">upper_limit</span><span class="p">}</span>
+        <span class="n">pynrand</span><span class="o">.</span><span class="n">_continuous</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">UniformSampler</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">ctor_params</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="kc">None</span></div>
+
+
+
+<span class="k">def</span> <span class="nf">_check_and_convert_shape</span><span class="p">(</span><span class="n">ctor_params</span><span class="p">):</span>
+    <span class="n">obj_name</span> <span class="o">=</span> <span class="s2">&quot;shape&quot;</span>
+    <span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;obj&quot;</span><span class="p">:</span> <span class="n">ctor_params</span><span class="p">[</span><span class="n">obj_name</span><span class="p">],</span> <span class="s2">&quot;obj_name&quot;</span><span class="p">:</span> <span class="n">obj_name</span><span class="p">}</span>
+    <span class="n">shape</span> <span class="o">=</span> <span class="n">czekitout</span><span class="o">.</span><span class="n">convert</span><span class="o">.</span><span class="n">to_nonnegative_float</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">shape</span>
+
+
+
+<span class="k">def</span> <span class="nf">_pre_serialize_shape</span><span class="p">(</span><span class="n">shape</span><span class="p">):</span>
+    <span class="n">serializable_rep</span> <span class="o">=</span> <span class="n">shape</span>
+    
+    <span class="k">return</span> <span class="n">serializable_rep</span>
+
+
+
+<span class="k">def</span> <span class="nf">_de_pre_serialize_shape</span><span class="p">(</span><span class="n">serializable_rep</span><span class="p">):</span>
+    <span class="n">shape</span> <span class="o">=</span> <span class="n">serializable_rep</span>
+
+    <span class="k">return</span> <span class="n">shape</span>
+
+
+
+<span class="k">def</span> <span class="nf">_check_and_convert_scale</span><span class="p">(</span><span class="n">ctor_params</span><span class="p">):</span>
+    <span class="n">obj_name</span> <span class="o">=</span> <span class="s2">&quot;scale&quot;</span>
+    <span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;obj&quot;</span><span class="p">:</span> <span class="n">ctor_params</span><span class="p">[</span><span class="n">obj_name</span><span class="p">],</span> <span class="s2">&quot;obj_name&quot;</span><span class="p">:</span> <span class="n">obj_name</span><span class="p">}</span>
+    <span class="n">scale</span> <span class="o">=</span> <span class="n">czekitout</span><span class="o">.</span><span class="n">convert</span><span class="o">.</span><span class="n">to_nonnegative_float</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">scale</span>
+
+
+
+<span class="k">def</span> <span class="nf">_pre_serialize_scale</span><span class="p">(</span><span class="n">scale</span><span class="p">):</span>
+    <span class="n">serializable_rep</span> <span class="o">=</span> <span class="n">scale</span>
+    
+    <span class="k">return</span> <span class="n">serializable_rep</span>
+
+
+
+<span class="k">def</span> <span class="nf">_de_pre_serialize_scale</span><span class="p">(</span><span class="n">serializable_rep</span><span class="p">):</span>
+    <span class="n">scale</span> <span class="o">=</span> <span class="n">serializable_rep</span>
+
+    <span class="k">return</span> <span class="n">scale</span>
+
+
+
+<div class="viewcode-block" id="GammaSampler"><a class="viewcode-back" href="../../../_autosummary/pynrand.continuous.nonnegative.GammaSampler.html#pynrand.continuous.nonnegative.GammaSampler">[docs]</a><span class="k">class</span> <span class="nc">GammaSampler</span><span class="p">(</span><span class="n">pynrand</span><span class="o">.</span><span class="n">_base</span><span class="o">.</span><span class="n">Sampler</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;Insert description here.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    shape : `float`, optional</span>
+<span class="sd">        Insert description here.</span>
+<span class="sd">    scale : `float`, optional</span>
+<span class="sd">        Insert description here.</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    core_attrs : `dict`, read-only</span>
+<span class="sd">        A `dict` representation of the core attributes: each `dict` key is a</span>
+<span class="sd">        `str` representing the name of a core attribute, and the corresponding</span>
+<span class="sd">        `dict` value is the object to which said core attribute is set. The core</span>
+<span class="sd">        attributes are the same as the construction parameters, except that </span>
+<span class="sd">        their values might have been updated since construction.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">_validation_and_conversion_funcs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;shape&quot;</span><span class="p">:</span> <span class="n">_check_and_convert_shape</span><span class="p">,</span>
+                                        <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="n">_check_and_convert_scale</span><span class="p">}</span>
+
+    <span class="n">_pre_serialization_funcs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;shape&quot;</span><span class="p">:</span> <span class="n">_pre_serialize_shape</span><span class="p">,</span>
+                                <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="n">_pre_serialize_scale</span><span class="p">}</span>
+
+    <span class="n">_de_pre_serialization_funcs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;shape&quot;</span><span class="p">:</span> <span class="n">_de_pre_serialize_shape</span><span class="p">,</span>
+                                   <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="n">_de_pre_serialize_scale</span><span class="p">}</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">ctor_params</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;shape&quot;</span><span class="p">:</span> <span class="n">shape</span><span class="p">,</span> <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="n">scale</span><span class="p">}</span>
+        <span class="n">pynrand</span><span class="o">.</span><span class="n">_base</span><span class="o">.</span><span class="n">Sampler</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctor_params</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_post_base_update</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="kc">None</span>
+
+
+
+    <span class="k">def</span> <span class="nf">_post_base_update</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_shape</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">core_attrs</span><span class="p">[</span><span class="s2">&quot;shape&quot;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_scale</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">core_attrs</span><span class="p">[</span><span class="s2">&quot;scale&quot;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="kc">None</span>
+
+
+
+<div class="viewcode-block" id="GammaSampler.update"><a class="viewcode-back" href="../../../_autosummary/pynrand.continuous.nonnegative.GammaSampler.html#pynrand.continuous.nonnegative.GammaSampler.update">[docs]</a>    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">core_attr_subset</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">core_attr_subset</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_post_base_update</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="kc">None</span></div>
+
+
+
+    <span class="k">def</span> <span class="nf">_draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output_shape</span><span class="p">):</span>
+        <span class="n">sample</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rng</span><span class="o">.</span><span class="n">gamma</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_shape</span><span class="p">,</span>
+                                 <span class="n">scale</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_scale</span><span class="p">,</span>
+                                 <span class="n">size</span><span class="o">=</span><span class="n">output_shape</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">sample</span></div>
+
+
+
+<span class="c1">###########################</span>
+<span class="c1">## Define error messages ##</span>
+<span class="c1">###########################</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Matthew Fitzpatrick.
+      <span class="lastupdated">Last updated on Feb 23, 2023.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
