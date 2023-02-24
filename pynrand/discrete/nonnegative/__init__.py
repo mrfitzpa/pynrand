@@ -23,6 +23,7 @@ import pynrand._discrete.base
 
 # Import submodules of subpackage.
 import pynrand.discrete.nonnegative.integer
+import pynrand.discrete.nonnegative.boolean
 
 
 
