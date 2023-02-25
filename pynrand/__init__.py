@@ -208,6 +208,16 @@ class Sampler(pynrand._base.Sampler):
 
 
 
+def _check_if_sampler_is_nonnegative(obj, obj_name):
+    sampler_name = obj.core_attrs["name"]
+    if "nonnegative" not in sampler_name:
+        err_msg = _check_if_sampler_is_nonnegative_err_msg_1.format(obj_name)
+        raise ValueError(err_msg)
+
+    return None
+
+
+
 ###########################
 ## Define error messages ##
 ###########################
@@ -218,3 +228,6 @@ _check_and_convert_params_err_msg_1 = \
      "``name``. See the documentation for the aforementioned class for details "
      "on its constructions parameters, and see the traceback above for "
      "further details on the source of the error.")
+
+_check_if_sampler_is_nonnegative_err_msg_1 = \
+    ("The object ``{}`` must specify a nonnegative sampler/distribution.")
